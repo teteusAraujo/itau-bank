@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.itau";
+
+
+package com.itau;
+
+service CustomerService {
+  rpc create (CustomerRequest) returns (CustomerResponse) {}
+}
+
+message CustomerRequest {
+  string name = 1;
+  string cpf = 2;
+}
+
+message CustomerResponse {
+  int64 id = 1;
+  string name = 2;
+  string cpf = 3;
+}
